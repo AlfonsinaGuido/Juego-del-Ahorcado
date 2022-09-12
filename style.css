@@ -1,0 +1,49 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.logo {
+position: absolute;
+left: 5.21%;
+right: 90.74%;
+top: 7.3%;
+bottom: 88.09%;
+}
+
+.btn-iniciar {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 24px;
+gap: 8px;
+
+position: absolute;
+width: 317px;
+height: 105px;
+left: 225px;
+top: 460px;
+
+background: #0A3871;
+border-radius: 24px;
+color: #ffffff;
+height: max-content;
+text-align: center;
+}
+
+.canvas {
+    margin-left: 2.5rem;
+    width: 1024px;
+    height: 800px;
+}
+
+.botones-div-canvas{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: absolute;
+    width: 680px;
+    height: 67px;
+    left: 28.5rem;
+    top: 760px;
+    margin-bottom: 25px;
+}
