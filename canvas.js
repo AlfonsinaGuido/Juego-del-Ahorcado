@@ -2,8 +2,8 @@ function dibujarCanvas(){
     tablero.lineWidth = 8;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
-    tablero.strokeStyle = "#8A3871";
+    tablero.fillStyle = "#E5E5E5";
+    tablero.strokeStyle = "#0A3871";
 
     tablero.fillRect(0,0,1200,860);
     tablero.beginPath();
@@ -17,8 +17,8 @@ function dibujarLinea(){
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
-    tablero.strokeStyle = "#8A3871";
+    tablero.fillStyle = "#E5E5E5";
+    tablero.strokeStyle = "#0A3871";
 
     let anchura = 600/palabraSecreta.length;
     for (let i = 0; i < palabraSecreta.length; i++){
@@ -35,7 +35,7 @@ function escribirLetraCorrecta(index){
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
+    tablero.fillStyle = "#0A3871";
 
     let anchura = 600/palabraSecreta.length;
     tablero.fillText(palabraSecreta[index], 505+(anchura*index), 620);
@@ -47,6 +47,6 @@ function escribirLetraIncorrecta(letra, errorsLeft){
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
-    tablero.fillStyle = "#F3F5F6";
+    tablero.fillStyle = "#0A3871";
     tablero.fillText(letra, 535+(40*(10-errorsLeft)), 710, 40);
 }
