@@ -2,8 +2,10 @@
 let palabras = ["MANZANA", "CHOCOLATE", "COMADREJA", "PARALELO", "MOSTAZA"];
 let tablero = document.getElementById("horca").getContext("2d");
 let palabraSecreta = "";
+let letraAcertada=[''];
 let letras = [];
-let errores = 8;
+let errores = 7;
+
 
 // Palabra Secreta
 function elegirPalabraSecreta(){
@@ -30,12 +32,38 @@ function agregarLetraIncorrecta(){
     console.log(errores);
 }
 
+
+
+function muestraPalabraSecreta(){
+    var palabra = document.getElementById('muestra-palabra-secreta');
+    palabra.innerHTML= palabraSecreta;
+
+}
+
+function compruebaSiPerdio(){
+    if(errores<=0){
+        swal("Error!", "Numero de Intentos Maximo!", "warning");
+        muestraPalabraSecreta();
+    }
+}
+
+function compruebaSiGano(){
+    //como la letraAcertada se va guardando por separado 
+    // hay que unirla y compararla con la palabra secreta
+    if(palabraSecreta===letraAcertada.join('')){
+        swal("Gano :D!", "Gano!", "success");
+    }
+    //console.log(letraAcertada.join(''));
+    //console.log(palabraSecreta);
+}
+
 // Iniciar juego
 function iniciarJuego(){
     document.getElementById("iniciar-juego").style.display = "none";
     elegirPalabraSecreta();
     dibujarCanvas();
     dibujarLinea();
+    dibujarHorca();
 
     document.onkeydown = (e) => {
         let letra = e.key.toUpperCase();
@@ -49,6 +77,7 @@ function iniciarJuego(){
         }else{
             agregarLetraIncorrecta(letra);
             escribirLetraIncorrecta(letra, errores);
+            dibujarCuerpo();
         }
     }
 }
