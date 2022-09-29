@@ -30,6 +30,15 @@ function dibujarLinea(){
     tablero.closePath();
 }
 
+function escribirLetraIncorrecta(letra, errorsLeft){
+    tablero.font = 'bold 40px Inter';
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "#0A3871";
+    tablero.fillText(letra, 535+(40*(10-errorsLeft)), 710, 40);
+}
+
 function escribirLetraCorrecta(index){
     tablero.font = 'bold 52px Inter';
     tablero.lineWidth = 6;
@@ -40,15 +49,6 @@ function escribirLetraCorrecta(index){
     let anchura = 600/palabraSecreta.length;
     tablero.fillText(palabraSecreta[index], 505+(anchura*index), 620);
     tablero.stroke();
-}
-
-function escribirLetraIncorrecta(letra, errorsLeft){
-    tablero.font = 'bold 40px Inter';
-    tablero.lineWidth = 6;
-    tablero.lineCap = "round";
-    tablero.lineJoin = "round";
-    tablero.fillStyle = "#0A3871";
-    tablero.fillText(letra, 535+(40*(10-errorsLeft)), 710, 40);
 }
 
 function dibujarHorca(){
@@ -198,7 +198,6 @@ function dibujarCuerpo(){
             break;            
     
         default:
-            console.log("opción incorrecta")
             break;
     }
 }
