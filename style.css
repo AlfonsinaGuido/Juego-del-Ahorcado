@@ -18,6 +18,14 @@ body {
     height:50px;
 }
 
+.botones-home{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    left: 42rem;
+}
+
 .btn-iniciar {
     display: flex;
     flex-direction: row;
@@ -51,12 +59,4 @@ body {
     margin-left: 2.5rem;
     width: 1024px;
     height: 800px;
-}
-
-.botones-home{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    left: 42rem;
 }

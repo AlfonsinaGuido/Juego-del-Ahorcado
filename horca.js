@@ -2,10 +2,11 @@
 let palabras = ["MANZANA", "CHOCOLATE", "COMADREJA", "PARALELO", "MOSTAZA"];
 let tablero = document.getElementById("horca").getContext("2d");
 let palabraSecreta = "";
-let letraAcertada=[''];
 let letras = [];
 let errores = 7;
-
+let aciertos = 0;
+let letrasIncorrectas = [];
+let letrasCorrectas = [];
 
 // Palabra Secreta
 function elegirPalabraSecreta(){
@@ -18,6 +19,7 @@ function comprobarLetra(key){
     let estado = false;
     if(key >= 65 && letras.indexOf(key) || key <= 90 && letras.indexOf(key)){
         letras.push(key);
+        console.log("comprobación ok");
         console.log(key);
         return estado;
     }else{
@@ -27,34 +29,36 @@ function comprobarLetra(key){
     }
 }
 
-function agregarLetraIncorrecta(){
+function agregarLetraIncorrecta(letra){
     errores -= 1;
-    console.log(errores);
+    if (!letrasIncorrectas.includes(letra)){
+        letrasIncorrectas.push(letra);
+        console.log(letrasIncorrectas);
+        console.log(errores);
+    }
 }
 
-
-
-function muestraPalabraSecreta(){
-    var palabra = document.getElementById('muestra-palabra-secreta');
-    palabra.innerHTML= palabraSecreta;
-
+function listaLetrasCorrectas(letra){
+    aciertos += 1;
+    if (!letrasCorrectas.includes(letra)){
+        letrasCorrectas.push(letra);
+        console.log(letrasCorrectas);
+        console.log(aciertos);
+    }
 }
 
 function compruebaSiPerdio(){
-    if(errores<=0){
-        swal("Error!", "Numero de Intentos Maximo!", "warning");
-        muestraPalabraSecreta();
+    if(errores === 0){
+        alert("Alpiste, perdiste 🤨 La palabra era " + palabraSecreta);
+        location.reload();
     }
 }
 
 function compruebaSiGano(){
-    //como la letraAcertada se va guardando por separado 
-    // hay que unirla y compararla con la palabra secreta
-    if(palabraSecreta===letraAcertada.join('')){
-        swal("Gano :D!", "Gano!", "success");
+    if(aciertos === palabraSecreta.length) {
+        alert("Acertaste, ganaste 🤓");
+        location.reload();
     }
-    //console.log(letraAcertada.join(''));
-    //console.log(palabraSecreta);
 }
 
 // Iniciar juego
@@ -68,16 +72,23 @@ function iniciarJuego(){
     document.onkeydown = (e) => {
         let letra = e.key.toUpperCase();
         
+    if(!letrasCorrectas.includes(letra)){
+
         if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
             for(let i = 0; i < palabraSecreta.length; i++){
                 if (palabraSecreta[i] === letra){
                     escribirLetraCorrecta(i);
+                    listaLetrasCorrectas(letra);
                 }
             }
-        }else{
+        }else if (!letrasIncorrectas.includes(letra)){
             agregarLetraIncorrecta(letra);
             escribirLetraIncorrecta(letra, errores);
             dibujarCuerpo();
         }
+
+    }
+    compruebaSiPerdio();
+    compruebaSiGano();
     }
 }
