@@ -5,10 +5,10 @@ function dibujarCanvas(){
     tablero.fillStyle = "#E5E5E5";
     tablero.strokeStyle = "#0A3871";
 
-    tablero.fillRect(0,0,1200,860);
+    tablero.fillRect(0,0,1300,800);
     tablero.beginPath();
-    tablero.moveTo(650, 500);
-    tablero.lineTo(900, 500);
+    tablero.moveTo(400, 450);
+    tablero.lineTo(650, 450);
     tablero.stroke();
     tablero.closePath();
 }
@@ -22,8 +22,8 @@ function dibujarLinea(){
 
     let anchura = 600/palabraSecreta.length;
     for (let i = 0; i < palabraSecreta.length; i++){
-        tablero.moveTo(500 + (anchura*i), 640);
-        tablero.lineTo(550 + (anchura*i), 640);
+        tablero.moveTo(400 + (anchura*i), 540);
+        tablero.lineTo(450 + (anchura*i), 540);
     }
 
     tablero.stroke();
@@ -36,7 +36,7 @@ function escribirLetraIncorrecta(letra, errorsLeft){
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
     tablero.fillStyle = "#0A3871";
-    tablero.fillText(letra, 535+(40*(10-errorsLeft)), 710, 40);
+    tablero.fillText(letra, 380+(40*(10-errorsLeft)), 585, 40);
 }
 
 function escribirLetraCorrecta(index){
@@ -47,7 +47,7 @@ function escribirLetraCorrecta(index){
     tablero.fillStyle = "#0A3871";
 
     let anchura = 600/palabraSecreta.length;
-    tablero.fillText(palabraSecreta[index], 505+(anchura*index), 620);
+    tablero.fillText(palabraSecreta[index], 410 +(anchura*index), 530);
     tablero.stroke();
 }
 
@@ -59,14 +59,14 @@ function dibujarHorca(){
     tablero.strokeStyle = "#0A3871";
         
     //palo vertical
-    //nos permite poner un puntos en cordenadas (x,y)
-    tablero.moveTo(730,500);
+    //nos permite poner puntos en cordenadas (x,y)
+    tablero.moveTo(500,450);
     //dibuja la linea desde el punto a el otro punto(x,y)
-    tablero.lineTo(730,200);
+    tablero.lineTo(500,150);
         
     //palo superior horizontal
-    tablero.moveTo(730,200);
-    tablero.lineTo(870,200);
+    tablero.moveTo(500,150);
+    tablero.lineTo(620,150);
         
     tablero.stroke();
     tablero.closePath();
@@ -81,11 +81,11 @@ function cabeza(){
     
     //cabeza
     tablero.beginPath();
-    tablero.arc(870,260, 30, 0, 2 * Math.PI); // Círculo externo
+    tablero.arc(620,210, 30, 0, 2 * Math.PI); // Círculo externo
 
     //cuerda
-    tablero.moveTo(870,200);
-    tablero.lineTo(870,230);
+    tablero.moveTo(620,150);
+    tablero.lineTo(620,180);
 
     tablero.stroke();
     tablero.closePath();
@@ -101,8 +101,8 @@ function tronco(){
     //tronco
     tablero.beginPath();
 
-    tablero.moveTo(870,400);
-    tablero.lineTo(870,290);
+    tablero.moveTo(620,360);
+    tablero.lineTo(620,240);
     
     tablero.stroke();
     tablero.closePath();
@@ -118,8 +118,8 @@ function brazoDerecho(){
     //brazo derecho
     tablero.beginPath();
 
-    tablero.moveTo(870,290);
-    tablero.lineTo(910,350);
+    tablero.moveTo(620,260);
+    tablero.lineTo(660,320);
     
     tablero.stroke();
     tablero.closePath();
@@ -135,8 +135,8 @@ function brazoIzquierdo(){
     //brazo izquierdo
     tablero.beginPath();
 
-    tablero.moveTo(870,290);
-    tablero.lineTo(830,350);
+    tablero.moveTo(620,260);
+    tablero.lineTo(580,320);
     
     tablero.stroke();
     tablero.closePath();
@@ -152,8 +152,8 @@ function piernaDerecha(){
     //pierna derecha
     tablero.beginPath();
     
-    tablero.moveTo(870,400);
-    tablero.lineTo(910,450);
+    tablero.moveTo(620,360);
+    tablero.lineTo(660,420);
     
     tablero.stroke();
     tablero.closePath();
@@ -169,8 +169,8 @@ function piernaIzquierda(){
     //pierna izquierda
     tablero.beginPath();
     
-    tablero.moveTo(870,400);
-    tablero.lineTo(830,450);
+    tablero.moveTo(620,360);
+    tablero.lineTo(580,420);
     
     tablero.stroke();
     tablero.closePath();
@@ -230,19 +230,19 @@ function dibujarAhorcado() {
     tablero.strokeStyle = "#0A3871";
 
     tablero.beginPath();
-    tablero.moveTo(880, 250);
-    tablero.lineTo(887, 257);
-    tablero.moveTo(858, 250);
-    tablero.lineTo(865, 257);
-    tablero.moveTo(865, 250);
-    tablero.lineTo(858, 257);
-    tablero.moveTo(887, 250);
-    tablero.lineTo(880, 257);
-    tablero.moveTo(867, 270);
-    tablero.lineTo(883, 270);
+    tablero.moveTo(630, 200);
+    tablero.lineTo(637, 207);
+    tablero.moveTo(608, 200);
+    tablero.lineTo(615, 207);
+    tablero.moveTo(615, 200);
+    tablero.lineTo(608, 207);
+    tablero.moveTo(637, 200);
+    tablero.lineTo(630, 207);
+    tablero.moveTo(617, 220);
+    tablero.lineTo(633, 220);
     tablero.stroke();
     
-    tablero.arc(880, 270, 5.5, 0, Math.PI, false);
+    tablero.arc(630, 220, 5.5, 0, Math.PI, false);
     tablero.fill();
     
     tablero.stroke();

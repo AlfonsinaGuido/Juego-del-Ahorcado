@@ -10,14 +10,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="imagenes/logo.svg" class="logo">
+    <a href="index.html"><img src="imagenes/logo.svg" class="logo"></a>
     <div id="div-desaparece" class="botones-home">
             <input class="btn-iniciar" type="submit" value="Iniciar Juego" id="iniciar-juego" onclick="iniciarJuego()">
             <textarea class="newWord" placeholder="Aquí podés agregar una palabra nueva con la que iniciarás el juego. Ingresar solo letras MAYÚSCULAS." cols="30" rows="5"></textarea>
             <input class="btn-iniciar" type="submit" value="Agregar Palabra y Jugar" id="agregar-palabra" onclick="nuevaPalabra()">
     </div>
     <div id="div-aparece-ahorcado" class="canvas">
-        <canvas id="horca" width="1200" height="860"></canvas>
+        <canvas id="horca" width="1300" height="600"></canvas>
+    </div>
+    <div id="footer">
+        <a href="https://alfonsinadvp.web.app/" target="_blank"><p>&#169; Copyright YAG - 2022</p></a>
     </div>
     <script src="horca.js"></script>
     <script src="canvas.js"></script>

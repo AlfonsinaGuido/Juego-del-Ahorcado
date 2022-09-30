@@ -31,11 +31,11 @@ function comprobarLetra(key){
 
 function agregarLetraIncorrecta(letra){
     errores -= 1;
-    if (!letrasIncorrectas.includes(letra)){
-        letrasIncorrectas.push(letra);
-        console.log(letrasIncorrectas);
-        console.log(errores);
-    }
+        if (!letrasIncorrectas.includes(letra)){
+            letrasIncorrectas.push(letra);
+            console.log(letrasIncorrectas);
+            console.log(errores);
+        }    
 }
 
 function listaLetrasCorrectas(letra){
@@ -68,8 +68,9 @@ function iniciarJuego(){
     dibujarHorca();
 
     document.onkeydown = (e) => {
+    if(errores > 0 && aciertos < palabraSecreta.length){
         let letra = e.key.toUpperCase();
-        
+           
     if(!letrasCorrectas.includes(letra)){
 
         if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
@@ -86,6 +87,8 @@ function iniciarJuego(){
         }
 
     }
+    } 
+        
     compruebaSiPerdio();
     compruebaSiGano();
     }
