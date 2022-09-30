@@ -12,38 +12,37 @@ let letrasCorrectas = [];
 function elegirPalabraSecreta(){
     let palabra = palabras[Math.floor(Math.random() * palabras.length)];
     palabraSecreta = palabra;
-    console.log(palabraSecreta);
+    // console.log(palabraSecreta);
 }
 
 function comprobarLetra(key){
     let estado = false;
     if(key >= 65 && letras.indexOf(key) || key <= 90 && letras.indexOf(key)){
         letras.push(key);
-        console.log("comprobación ok");
-        console.log(key);
+        // console.log(key);
         return estado;
     }else{
         estado = true;
-        console.log(key);
+        // console.log(key);
         return estado;
     }
 }
 
 function agregarLetraIncorrecta(letra){
     errores -= 1;
-    if (!letrasIncorrectas.includes(letra)){
-        letrasIncorrectas.push(letra);
-        console.log(letrasIncorrectas);
-        console.log(errores);
-    }
+        if (!letrasIncorrectas.includes(letra)){
+            letrasIncorrectas.push(letra);
+            // console.log(letrasIncorrectas);
+            // console.log(errores);
+        }    
 }
 
 function listaLetrasCorrectas(letra){
     aciertos += 1;
     if (!letrasCorrectas.includes(letra)){
         letrasCorrectas.push(letra);
-        console.log(letrasCorrectas);
-        console.log(aciertos);
+        // console.log(letrasCorrectas);
+        // console.log(aciertos);
     }
 }
 
@@ -62,14 +61,16 @@ function compruebaSiGano(){
 // Iniciar juego
 function iniciarJuego(){
     document.getElementById("div-desaparece").style.display = "none";
+    document.getElementById("reinicia").style.display = "";
     elegirPalabraSecreta();
     dibujarCanvas();
     dibujarLinea();
     dibujarHorca();
 
     document.onkeydown = (e) => {
+    if(errores > 0 && aciertos < palabraSecreta.length){
         let letra = e.key.toUpperCase();
-        
+           
     if(!letrasCorrectas.includes(letra)){
 
         if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
@@ -86,6 +87,8 @@ function iniciarJuego(){
         }
 
     }
+    } 
+        
     compruebaSiPerdio();
     compruebaSiGano();
     }

@@ -45,7 +45,6 @@ body {
     font-weight: 600;
     font-size: 24px;
     line-height: 22px;
-    display: flex;
     justify-content: center;
   
   /* White */
@@ -73,6 +72,80 @@ body {
 
 .canvas {
     margin-left: 2.5rem;
-    width: 1024px;
+    width: 1300px;
     height: 800px;
+}
+
+#reinicia {
+    position: absolute;
+    right: 100px;
+    top: 0;
+}
+
+#footer a{
+    position: absolute;
+    left: 45%;
+    bottom: 10rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#footer a:hover{
+    font-size: large;
+}
+
+@media (max-width: 548px) {
+    body {
+        width: max-content;
+    }
+    .logo {
+        left: 10px;
+    }
+    .botones-home{
+        left: 0px !important;
+    }
+    .btn-iniciar {
+        width: 200px;
+        height: 80px;
+        font-size: 12px;
+    }
+    #agregar-palabra {
+        left: 5rem;
+        top: 14rem !important;  
+    }
+    .newWord {
+        left: 4rem !important;
+        top: 8rem !important;
+    }
+    .canvas {
+        margin-left: 2.5rem;
+        width: 1024px;
+        height: 800px;
+    }
+    #footer a{
+        left: 5.5rem !important;
+        top: 30rem !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .logo {
+        left: 10px;
+    }
+    .botones-home{
+        left: 40px;
+        top: 30px;
+    }
+    #agregar-palabra {
+        left: 5rem;
+        top: 12rem;  
+    }
+    .newWord {
+        left: 7.5rem;
+        top: 6rem;
+    }
+    #footer a{
+        left: 12rem;
+        top: 30rem;
+    }
 }
