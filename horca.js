@@ -98,11 +98,11 @@ function iniciarJuego(){
 //Agregar palabra al array palabras
 function nuevaPalabra() {
     let nuevaPalabra = document.querySelector(".newWord").value;
-    nuevaPalabra = nuevaPalabra.toUpperCase();
-    palabras = [];
-    palabras.push(nuevaPalabra);
-    document.querySelector(".newWord").value="";
-
-    iniciarJuego();
-    
+    if(nuevaPalabra.length > 0){  
+        nuevaPalabra = nuevaPalabra.toUpperCase();
+        palabras = [];
+        palabras.push(nuevaPalabra);
+        document.querySelector(".newWord").value="";
+        iniciarJuego();
+    }   
 }
