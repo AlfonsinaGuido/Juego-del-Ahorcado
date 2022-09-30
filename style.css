@@ -77,9 +77,10 @@ body {
 }
 
 #reinicia {
+    float: right;
+    right: 10%;
+    top: 20%;
     position: absolute;
-    right: 100px;
-    top: 0;
 }
 
 #footer a{
