@@ -205,7 +205,7 @@ function dibujarCuerpo(){
 
 function msjGanador() {
   
-    tablero.font = "bold 52px Inter";
+    tablero.font = "bold 40px Inter";
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";
@@ -214,7 +214,7 @@ function msjGanador() {
 }
   
 function msjPerdedor() {
-    tablero.font = "bold 52px Inter";
+    tablero.font = "bold 40px Inter";
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
     tablero.lineJoin = "round";

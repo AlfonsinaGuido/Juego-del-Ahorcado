@@ -76,6 +76,12 @@ body {
     height: 800px;
 }
 
+#reinicia {
+    position: absolute;
+    right: 100px;
+    top: 0;
+}
+
 #footer a{
     position: absolute;
     left: 45%;
