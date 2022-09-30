@@ -196,8 +196,55 @@ function dibujarCuerpo(){
         case 1:
             piernaIzquierda();
             break;            
-    
+        case 0:
+            dibujarAhorcado();
         default:
             break;
     }
 }
+
+function msjGanador() {
+  
+    tablero.font = "bold 52px Inter";
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "#0A3871";
+    tablero.fillText("¡Ganaste 🤓, Felicidades!", 100, 100);
+}
+  
+function msjPerdedor() {
+    tablero.font = "bold 52px Inter";
+    tablero.lineWidth = 6;
+    tablero.lineCap = "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "#0A3871";
+    tablero.fillText("Fin del juego. La palabra era " + palabraSecreta, 100, 100);
+}
+
+function dibujarAhorcado() {
+    tablero.lineWidth = 6;
+    tablero.lineCap= "round";
+    tablero.lineJoin = "round";
+    tablero.fillStyle = "#F3F5F6";
+    tablero.strokeStyle = "#0A3871";
+
+    tablero.beginPath();
+    tablero.moveTo(880, 250);
+    tablero.lineTo(887, 257);
+    tablero.moveTo(858, 250);
+    tablero.lineTo(865, 257);
+    tablero.moveTo(865, 250);
+    tablero.lineTo(858, 257);
+    tablero.moveTo(887, 250);
+    tablero.lineTo(880, 257);
+    tablero.moveTo(867, 270);
+    tablero.lineTo(883, 270);
+    tablero.stroke();
+    
+    tablero.arc(880, 270, 5.5, 0, Math.PI, false);
+    tablero.fill();
+    
+    tablero.stroke();
+    tablero.closePath();
+  }

@@ -12,16 +12,12 @@
 <body>
     <img src="imagenes/logo.svg" class="logo">
     <div id="div-desaparece" class="botones-home">
-        <a href="#horca">
             <input class="btn-iniciar" type="submit" value="Iniciar Juego" id="iniciar-juego" onclick="iniciarJuego()">
-        </a>
+            <textarea class="newWord" placeholder="Aquí podés agregar una palabra nueva con la que iniciarás el juego. Ingresar solo letras MAYÚSCULAS." cols="30" rows="5"></textarea>
+            <input class="btn-iniciar" type="submit" value="Agregar Palabra y Jugar" id="agregar-palabra" onclick="nuevaPalabra()">
     </div>
     <div id="div-aparece-ahorcado" class="canvas">
         <canvas id="horca" width="1200" height="860"></canvas>
-        <div id="palabraSecreta" class="palabraSecreta" hidden>
-            <span>La Palabra correcta era:</span>
-            <span id="muestra-palabra-secreta"></span>
-        </div>
     </div>
     <script src="horca.js"></script>
     <script src="canvas.js"></script>

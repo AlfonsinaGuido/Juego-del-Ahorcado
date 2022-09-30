@@ -49,21 +49,19 @@ function listaLetrasCorrectas(letra){
 
 function compruebaSiPerdio(){
     if(errores === 0){
-        alert("Alpiste, perdiste 🤨 La palabra era " + palabraSecreta);
-        location.reload();
+        msjPerdedor();
     }
 }
 
 function compruebaSiGano(){
     if(aciertos === palabraSecreta.length) {
-        alert("Acertaste, ganaste 🤓");
-        location.reload();
+        msjGanador();
     }
 }
 
 // Iniciar juego
 function iniciarJuego(){
-    document.getElementById("iniciar-juego").style.display = "none";
+    document.getElementById("div-desaparece").style.display = "none";
     elegirPalabraSecreta();
     dibujarCanvas();
     dibujarLinea();
@@ -91,4 +89,17 @@ function iniciarJuego(){
     compruebaSiPerdio();
     compruebaSiGano();
     }
+    
+}
+
+//Agregar palabra al array palabras
+function nuevaPalabra() {
+    let nuevaPalabra = document.querySelector(".newWord").value;
+    nuevaPalabra = nuevaPalabra.toUpperCase();
+    palabras = [];
+    palabras.push(nuevaPalabra);
+    document.querySelector(".newWord").value="";
+
+    iniciarJuego();
+    
 }

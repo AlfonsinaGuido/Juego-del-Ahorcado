@@ -32,11 +32,9 @@ body {
     align-items: flex-start;
     padding: 24px;
     
-    position: absolute;
+    
     width: 317px;
     height: 114px;
-    left: 0;
-    top: 20rem;
     cursor: pointer;
     
     /* Dark blue/dark-blue-300 */
@@ -54,6 +52,24 @@ body {
   
     color: #FFFFFF;
   }
+
+#iniciar-juego {
+    position: absolute;
+    left: 5rem;
+    top: 20rem;
+}
+
+#agregar-palabra {
+    position: absolute;
+    left: -20rem;
+    top: 20rem;   
+}
+
+.newWord {
+    position: absolute;
+    left: -18rem;
+    top: 10rem;
+}
 
 .canvas {
     margin-left: 2.5rem;
