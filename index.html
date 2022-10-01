@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego del Ahorcado</title>
-   
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </head>
 <body>
     <a href="index.html"><img src="imagenes/logo.svg" class="logo"></a>
     <div id="div-desaparece" class="botones-home">
             <input class="btn-iniciar" type="submit" value="Iniciar Juego" id="iniciar-juego" onclick="iniciarJuego()">
-            <textarea class="newWord" placeholder="Aquí podés agregar una palabra nueva con la que iniciarás el juego. Máximo 10 letras." cols="30" rows="5"></textarea>
+            <textarea class="newWord" placeholder="Aquí podés agregar una palabra nueva con la que iniciarás el juego. Máximo 10 letras. No admite tildes ni la letra Ñ." cols="30" rows="5"></textarea>
             <input class="btn-iniciar" type="submit" value="Agregar Palabra y Jugar" id="agregar-palabra" onclick="nuevaPalabra()">
     </div>
     <div id="div-aparece-ahorcado" class="canvas">
